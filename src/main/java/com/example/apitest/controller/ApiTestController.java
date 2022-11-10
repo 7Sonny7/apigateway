@@ -1,7 +1,6 @@
 package com.example.apitest.controller;
 
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +17,13 @@ public class ApiTestController {
     @GetMapping("/api1")
     //@Tag(name = "test api part 1", description = "API Gateway Test API 입니다.")
     @ApiOperation(value = "test api part 1", notes = "test api part 1")
-    public ResponseEntity<String> testApi(){
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    public String testApi(){
+        return "First Test API";
     }
 
     @PostMapping("/api2")
     @ApiOperation(value = "test api part 2", notes = "test api part 2")
-    public ResponseEntity<String> testApi2(){
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    public String testApi2(){
+        return "Second Test API";
     }
 }
