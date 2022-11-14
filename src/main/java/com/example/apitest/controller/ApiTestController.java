@@ -35,4 +35,10 @@ public class ApiTestController {
     public String testApi4(@RequestParam(required = false) String testParam){
         return testParam;
     }
+
+    @PostMapping("/api5/{testParam}")
+    @ApiOperation(value = "test api part 5", notes = "test api part 5")
+    public String testApi5(@PathVariable("testParam") String testParam){
+        return testParam;
+    }
 }
